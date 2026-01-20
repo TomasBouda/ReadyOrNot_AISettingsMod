@@ -7,7 +7,11 @@
 @pushd %~dp0
 ::-compresslevel=4 for Normal, -compresslevel=-4 for uncompressed hyperfast paking
 .\UnrealPak.exe "%~1.pak" -create=filelist.txt -compress -compressionformats=Oodle -compressmethod=Kraken -compresslevel=4
+
 @del filelist.txt
+
+@powershell -ExecutionPolicy Bypass -File "..\use_mod.ps1"
+
 @popd
 @pause
 
